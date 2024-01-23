@@ -3,7 +3,7 @@
 "use strict";
 
 /* The code block is defining a constant variable `api_key` which holds a specific API key. */
-const api_key = "124f56f7736f5662c56a82975872ed64";
+const api_key = "";
 
 //* fetch data from server
 export const fetchData = function (URL, callback) {
