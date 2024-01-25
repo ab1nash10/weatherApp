@@ -111,20 +111,19 @@ export const updateWeather = function (lat, lon) {
   // ? current weather section
 
   fetchData(url.currentWeather(lat, lon), function (currentWeather) {
-    if (currentWeather) {
-      const {
-        weather,
-        dt: dateUnix,
-        sys: { sunrise: sunriseUnixUTC, sunset: sunsetUnixUTC },
-        main: { temp, feels_like, pressure, humidity },
-        visibility,
-        timezone,
-      } = currentWeather;
+    const {
+      weather,
+      dt: dateUnix,
+      sys: { sunrise: sunriseUnixUTC, sunset: sunsetUnixUTC },
+      main: { temp, feels_like, pressure, humidity },
+      visibility,
+      timezone,
+    } = currentWeather;
 
-      const [{ description, icon }] = weather;
-      const card = document.createElement("div");
-      card.classList.add("card", "card-lg", "current-weather-card");
-      card.innerHTML = `
+    const [{ description, icon }] = weather;
+    const card = document.createElement("div");
+    card.classList.add("card", "card-lg", "current-weather-card");
+    card.innerHTML = `
     <h2 class="title-2 card-title">Now</h2>
     <div class="weappear">
       <p class="heading">${parseInt(temp)}&deg;<sup>c</sup></p>
@@ -151,11 +150,10 @@ export const updateWeather = function (lat, lon) {
       </li>
     </ul>
     `;
-      fetchData(url.reverseGeo(lat, lon), function ([{ name, country }]) {
-        card.querySelector("[data-location]").innerHTML = `
+    fetchData(url.reverseGeo(lat, lon), function ([{ name, country }]) {
+      card.querySelector("[data-location]").innerHTML = `
       ${name}, ${country}`;
-      });
-      currentWeatherSection.appendChild(card);
-    }
+    });
+    currentWeatherSection.appendChild(card);
   });
 };

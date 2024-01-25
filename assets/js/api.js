@@ -3,7 +3,7 @@
 "use strict";
 
 /* The code block is defining a constant variable `api_key` which holds a specific API key. */
-const api_key = "";
+const api_key = "124f56f7736f5662c56a82975872ed64";
 
 //* fetch data from server
 export const fetchData = function (URL, callback) {
@@ -32,15 +32,3 @@ export const url = {
     return `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`;
   },
 };
-
-// ×
-
-// GET https: //api.openweathermap. org/data/2.5/weather?lat=32.6795264&1on%20-%2074.8 api. js : 10
-// 617728&units=metric&appid=124f56f ... 400 (Bad Request)
-// fetchData
-
-// updateWeather
-// window.navigator.geolocation.getCurrentPosition.window.location.hash @ route. js: 15
-
-// @ api.js:10
-// @ app.js:113
