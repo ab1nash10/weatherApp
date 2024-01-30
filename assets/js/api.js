@@ -4,13 +4,14 @@
 
 /* The code block is defining a constant variable `api_key` which holds a specific API key. */
 // const api_key = process.env.apiKey;
-const api_key = "";
+const api_key = "124f56f7736f5662c56a82975872ed64";
+//124f56f7736f5662c56a82975872ed64
 
 //* fetch data from server
 
 export const fetchData = function (URL, callback) {
   fetch(`${URL}&appid=${api_key}`)
-    .then((resp) => resp.json())
+    .then((res) => res.json())
     .then((data) => callback(data));
 };
 
